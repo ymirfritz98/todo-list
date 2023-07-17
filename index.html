@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://w7.pngwing.com/pngs/670/265/png-transparent-checkmark-done-exam-list-pencil-todo-xomo-basics-icon-thumbnail.png"
+      type="image/x-icon"
+    />
+    <title>todo-list</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        padding: 10px;
+        background: linear-gradient(135deg, #153677, #4e085f);
+      }
+      .todo-list {
+        width: 100%;
+        max-width: 540px;
+        padding: 40px 30px 70px;
+        margin: 80px auto 20px;
+        background: #fff;
+        border-radius: 10px;
+      }
+      .todo-list h2 {
+        color: #002765;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .todo-list h2 img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+      }
+      .todo-list .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        background-color: #edeef0;
+        border-radius: 30px;
+      }
+      .todo-list .row input {
+        padding: 10px;
+        background: transparent;
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 14px;
+      }
+      .todo-list .row button {
+        border: none;
+        outline: none;
+        padding: 16px 50px;
+        color: #fff;
+        background-color: #ff5945;
+        font-size: 16px;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .todo-list .row button:hover {
+        background-color: #fa3a24;
+      }
+      .todo-list ul li {
+        list-style: none;
+        font-size: 17px;
+        padding: 12px 8px 12px 50px;
+        user-select: none;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .todo-list ul li::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        /* top: 12px; */
+        width: 28px;
+        height: 28px;
+        background-image: url("images/unchecked.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+      }
+      ul li.checked {
+        color: #555;
+        text-decoration: line-through;
+      }
+      .todo-list ul li.checked::before {
+        background-image: url("images/checked.png");
+      }
+      ul li span {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        width: 40px;
+        height: 40px;
+        color: #555;
+        text-align: center;
+        font-size: 22px;
+        line-height: 40px;
+        border-radius: 50%;
+      }
+      ul li span:hover {
+        background-color: #edeef0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-list">
+        <h2>
+          TO-DO List
+          <img
+            src="https://w7.pngwing.com/pngs/670/265/png-transparent-checkmark-done-exam-list-pencil-todo-xomo-basics-icon-thumbnail.png"
+            alt="image_Icon"
+          />
+        </h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Add Your Text" />
+          <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="list-container"></ul>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
